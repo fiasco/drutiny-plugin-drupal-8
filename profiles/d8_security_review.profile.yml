@@ -3,7 +3,7 @@ policies:
     Drupal-8:ConfigDevelDisabled:
     Drupal-8:DevelDisabled:
     Drupal-8:ErrorLevel:
-    Drupal-8:KnitDisabled:
+    Drupal-8:KintDisabled:
     Drupal-8:NoBackupAndMigrate:
     Drupal-8:NoExperimental:
     Drupal-8:PhpDisabled:
