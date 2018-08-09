@@ -30,7 +30,7 @@ class User1 extends Audit implements RemediableInterface {
   public function audit(Sandbox $sandbox) {
     // Get the details for user #1.
     $user = $sandbox->drush(['format' => 'json'])
-                    ->userInformation(1);
+                    ->userInformation('--uid=1');
 
     $user = (object) array_pop($user);
 
@@ -66,7 +66,7 @@ class User1 extends Audit implements RemediableInterface {
 
     // Get the details for user #1.
     $user = $sandbox->drush(['format' => 'json'])
-                    ->userInformation(1);
+                    ->userInformation('--uid=1');
 
     $user = (object) array_pop($user);
 
