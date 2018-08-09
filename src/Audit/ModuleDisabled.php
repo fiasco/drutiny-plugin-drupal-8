@@ -39,7 +39,7 @@ class ModuleDisabled extends Audit implements RemediableInterface {
 
     $status = strtolower($info[$module]['status']);
 
-    return ($status == 'not installed');
+    return ($status != 'enabled');
   }
 
   public function remediate(Sandbox $sandbox)
