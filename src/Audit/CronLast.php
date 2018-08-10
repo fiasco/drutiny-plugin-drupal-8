@@ -25,9 +25,9 @@ class CronLast extends Audit {
         return FALSE;
       }
 
-      $sandbox->setParameter('cron_last', date('l jS \of F Y h:i:s A', $last));
+      $sandbox->setParameter('cron_last', date('l jS \of F Y h:i:s A', $last['system.cron_last']));
 
-      $time_diff = time() - $last;
+      $time_diff = time() - $last['system.cron_last'];
       // Fail if cron hasn't run in the last 24 hours.
       if ($time_diff > 86400) {
         return FALSE;
