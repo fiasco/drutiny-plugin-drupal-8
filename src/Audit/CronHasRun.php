@@ -30,8 +30,8 @@ class CronHasRun extends Audit {
     }
 
     // Check that cron was run in the last day.
-    $since = time() - $timestamp;
-    $sandbox->setParameter('cron_last', date('Y-m-d H:i:s', $timestamp));
+    $since = time() - $timestamp['system.cron_last'];
+    $sandbox->setParameter('cron_last', date('Y-m-d H:i:s', $timestamp['system.cron_last']));
 
     if ($since > $sandbox->getParameter('cron_max_interval')) {
       return FALSE;
