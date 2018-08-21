@@ -14,7 +14,7 @@
     },
     "require": {
         "drutiny/drutiny": "2.1.*@dev || 2.2.*@dev",
-        "drutiny/http": "2.x-dev",
+        "drutiny/http": "2.x-dev#2.2",
         "symfony/yaml": "^3.2"
     },
     "autoload": {
