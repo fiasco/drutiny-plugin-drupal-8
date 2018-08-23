@@ -1,0 +1,19 @@
+title: "Content Owned By Drupal's Anonymous User"
+class: \Drutiny\Plugin\Drupal8\Audit\ContentOwnedByUserIDD8
+name: Drupal-8:ContentOwnedByAnonymous
+tags:
+  - Drupal 8
+description: |
+  Content owned by a user that is not expected can pose a security risk whereby untrusted users might 
+  be able to include malicious code in content. If the unexpected user is "Anonymous", this could 
+  mean any site visitor could present a risk if they entered malicious code into content.
+
+  This policy identifies if there are nodes owned by Drupal's Anonymous User.
+remediation: |
+  Assess whether or not there is a legitimate reason that nodes should be owned by Drupal's Anonymous User on the site.
+  If not, assign the appropriate owner to the content.
+success: No nodes are owned by Drupal's Anonymous User.
+failure: Drupal's Anonymous User owns {{totalnodes}} nodes.
+parameters:
+  uid:
+    default: 0
