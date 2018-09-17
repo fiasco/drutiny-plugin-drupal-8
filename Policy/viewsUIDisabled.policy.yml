@@ -1,6 +1,6 @@
 title: Views UI module is not installed
 class: \Drutiny\Plugin\Drupal8\Audit\ModuleDisabled
-name: Drupal-8:ViewsEnabled
+name: Drupal-8:ViewsUIDisabled
 tags:
   - Drupal 8
   - Best Practice
