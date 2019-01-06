@@ -92,7 +92,7 @@ class User1 extends Audit implements RemediableInterface {
       'username' => $this->generateRandomString()
     ]);
 
-    return $this->check($sandbox);
+    return $this->audit($sandbox);
   }
 
   /**

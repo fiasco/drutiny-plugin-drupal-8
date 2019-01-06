@@ -61,7 +61,7 @@ class ConfigCheck extends AbstractComparison implements RemediableInterface {
     $key = $sandbox->getParameter('key');
     $value = $sandbox->getParameter('value');
     $sandbox->drush()->configSet($collection, $key, $value);
-    return $this->check($sandbox);
+    return $this->audit($sandbox);
   }
 
 }
