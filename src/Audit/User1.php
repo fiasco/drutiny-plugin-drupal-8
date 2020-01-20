@@ -30,7 +30,7 @@ class User1 extends Audit implements RemediableInterface {
   public function audit(Sandbox $sandbox) {
     // Get the details for user #1.
     $user = $sandbox->drush(['format' => 'json'])
-                    ->userInformation(1);
+                    ->userInformation('--uid=1');
 
     $user = (object) array_pop($user);
 
@@ -53,8 +53,8 @@ class User1 extends Audit implements RemediableInterface {
 
     // Status.
     $status = (bool) $sandbox->getParameter('status');
-    if ($status !== (bool) $user->status) {
-      $errors[] = 'Status is not set correctly. Should be ' . ($user->status ? 'active' : 'inactive') . '.';
+    if ($status !== (bool) $user->user_status) {
+      $errors[] = 'Status is not set correctly. Should be ' . ($user->user_status ? 'active' : 'inactive') . '.';
     }
 
     $sandbox->setParameter('errors', $errors);
@@ -66,7 +66,7 @@ class User1 extends Audit implements RemediableInterface {
 
     // Get the details for user #1.
     $user = $sandbox->drush(['format' => 'json'])
-                    ->userInformation(1);
+                    ->userInformation('--uid=1');
 
     $user = (object) array_pop($user);
 
@@ -86,7 +86,7 @@ class User1 extends Audit implements RemediableInterface {
       return TRUE;
     }, [
       'uid' => $user->uid,
-      'status' => (int) (bool) $sandbox->getParameter('status'),
+      'user_status' => (int) (bool) $sandbox->getParameter('status'),
       'password' => $this->generateRandomString(),
       'email' => $sandbox->getParameter('email'),
       'username' => $this->generateRandomString()
