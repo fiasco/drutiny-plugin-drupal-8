@@ -14,7 +14,7 @@ use Drutiny\Annotation\Param;
  *  description = "The email the user account should be.",
  * )
  * @Param(
- *  name = "blacklist",
+ *  name = "denylist",
  *  description = "List of usernames that are not acceptable.",
  * )
  * @Param(
@@ -38,7 +38,7 @@ class User1 extends Audit implements RemediableInterface {
     $fixups = [];
 
     // Username.
-    $pattern = $sandbox->getParameter('blacklist');
+    $pattern = $sandbox->getParameter('denylist');
     if (preg_match("#${pattern}#i", $user->name)) {
       $errors[] = "Username '$user->name' is too easy to guess.";
     }
